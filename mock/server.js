@@ -20,8 +20,7 @@ server.use(router)
 router.render = function (req, res) {
     let data = res.locals.data
     if (Array.isArray(data)) {
-        const lastPath = req.url.split('/').pop();
-        res.send({[lastPath]: data})
+        res.send({contents: data, limit: 10, offset: 0, totalCount: 100})
     } else if (!Object.keys(data).length) {
         res.status(404).send({
             message: "Not Found"
