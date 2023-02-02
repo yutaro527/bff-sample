@@ -1,0 +1,5 @@
+env:
+  api:
+    product:
+      url: ${PRODUCT_API_URL:http://localhost:3000}
+
